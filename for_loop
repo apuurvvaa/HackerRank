@@ -1,4 +1,4 @@
-A for loop is a programming language statement which allows code to be repeatedly executed.
+/* A for loop is a programming language statement which allows code to be repeatedly executed.
 
 The syntax for this is
 
@@ -35,37 +35,31 @@ eight
 nine
 even
 odd
-
+*/
 
 <CODE>
 
 
 #include <iostream>
-#include <cstdio>
+#include <cstdio> //Input and Output operations can also be performed in C++ using the C Standard Input and Output Library (cstdio, known as stdio.h in the C language).
 using namespace std;
 
 int main() {
     // Complete the code.
-
-    string one[] = { "", "one ", "two ", "three ", "four ", 
-                 "five ", "six ", "seven ", "eight ", 
-                 "nine "
-               }; 
-
-    int a,b;
-    cin>>a>>b;
-    for(int i=a;i<=b;i++){
-        if(i<=9){
-            cout<<one[i]<<endl;
+    int a,b,i;  // declaring variable a and b for two input and i for the itteration of for loop
+    char *str[] = {"one","two","three","four","five","six","seven","eight","nine","even","odd"}; //string of numbers less than 9 in their english name
+    cin>>a; // read in value a
+    cin>>b; // read in value b
+    for(i=a;i<=b;i++) //i++ keeping it continued rather stopping until the condition is made
+    {   // for loop to iterate through the for to print out the right "i"
+        if(i<=9)
+        {
+            cout<<str[i-1]<<"\n";  // [i-1] for the array since it starts at zero
         }
-        else if(i%2==0){
-            cout<<"even"<<endl;
+        else
+        {
+            cout<<str[9+(i%2)]<<"\n";  // [9+(i%2)] would result in either zero or 1 making it even or odd
         }
-        else {
-            cout<<"odd"<<endl;
-        }
-    }           
-
-
+    }
     return 0;
-}
+} 
